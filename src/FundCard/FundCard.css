@@ -1,0 +1,31 @@
+.fund-card {
+  box-shadow: none;
+  border: 2px solid #e2e2e2;
+  position: relative;
+  background-color: #fff;
+  /* width: 80vw; */
+  width: 350px;
+  height: 470px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+}
+
+.fund-image > img {
+  width: 350px;
+  height: 290px;
+  object-fit: cover;
+}
+
+.fund-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 16px;
+}
+
+.fund-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}

@@ -1,27 +1,14 @@
 import React, { useState, useMemo, useRef } from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
+import FundCard from "../FundCard/FundCard";
 
 const db = [
   {
-    name: "Richard Hendricks",
-    url: "./img/richard.jpg",
-  },
-  {
-    name: "Erlich Bachman",
-    url: "./img/erlich.jpg",
-  },
-  {
-    name: "Monica Hall",
-    url: "./img/monica.jpg",
-  },
-  {
-    name: "Jared Dunn",
-    url: "./img/jared.jpg",
-  },
-  {
-    name: "Dinesh Chugtai",
-    url: "./img/dinesh.jpg",
+    fundname: "Test Campaign",
+    funddescription: "This is a cat.",
+    fundimage: "./img/dogs.jpg",
+    default_url: "test-campaign",
   },
 ];
 
@@ -89,20 +76,15 @@ function Advanced() {
       />
       {/* <h1>React Tinder Card</h1> */}
       <div className="cardContainer">
-        {db.map((character, index) => (
+        {db.map((campaign, index) => (
           <TinderCard
             ref={childRefs[index]}
             className="swipe"
-            key={character.name}
-            onSwipe={(dir) => swiped(dir, character.name, index)}
-            onCardLeftScreen={() => outOfFrame(character.name, index)}
+            key={campaign.fundname}
+            onSwipe={(dir) => swiped(dir, campaign.fundname, index)}
+            onCardLeftScreen={() => outOfFrame(campaign.fundname, index)}
           >
-            <div
-              style={{ backgroundImage: "url(" + character.url + ")" }}
-              className="card"
-            >
-              <h3>{character.name}</h3>
-            </div>
+            <FundCard props={campaign} />
           </TinderCard>
         ))}
       </div>
