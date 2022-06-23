@@ -2,6 +2,8 @@ import React from "react";
 
 import "./FundCard.css";
 
+const rg = /(^\w{1}|\.\s*\w{1})/gi;
+
 const FundCard = ({ props }) => {
   const { fundname, funddescription, fundimage, default_url } = props;
 
@@ -16,7 +18,9 @@ const FundCard = ({ props }) => {
       </div>
       <div className="fund-info">
         <div className="fund-title">{fundname}</div>
-        <div className="fund-description">{truncateText(funddescription)}</div>
+        <div className="fund-description">
+          {truncateText(funddescription.replace(rg, (s) => s.toUpperCase()))}
+        </div>
       </div>
     </div>
   );

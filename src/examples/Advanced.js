@@ -3,14 +3,7 @@ import React, { useState, useMemo, useRef } from "react";
 import TinderCard from "react-tinder-card";
 import FundCard from "../FundCard/FundCard";
 
-const db = [
-  {
-    fundname: "Test Campaign",
-    funddescription: "This is a cat.",
-    fundimage: "./img/dogs.jpg",
-    default_url: "test-campaign",
-  },
-];
+import { db } from "./db";
 
 function Advanced() {
   const [currentIndex, setCurrentIndex] = useState(db.length - 1);
@@ -79,7 +72,6 @@ function Advanced() {
         href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
         rel="stylesheet"
       />
-      {/* <h1>React Tinder Card</h1> */}
       <div className="cardContainer">
         {db.map((campaign, index) => (
           <TinderCard
@@ -114,15 +106,6 @@ function Advanced() {
           <img src="./img/heart.png" alt="like this campaign" />
         </button>
       </div>
-      {lastDirection ? (
-        <h2 key={lastDirection} className="infoText">
-          You swiped {lastDirection}
-        </h2>
-      ) : (
-        <h2 className="infoText">
-          Swipe a card or press a button to get Restore Card button visible!
-        </h2>
-      )}
     </div>
   );
 }
