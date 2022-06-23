@@ -64,6 +64,11 @@ function Advanced() {
     await childRefs[newIndex].current.restoreCard();
   };
 
+  const donate = (fundurl) => {
+    // window.open(fundurl);
+    swipe("right");
+  };
+
   return (
     <div>
       <link
@@ -90,22 +95,23 @@ function Advanced() {
       </div>
       <div className="buttons">
         <button
-          style={{ backgroundColor: !canSwipe && "#c3c4d3" }}
+          style={{ backgroundColor: !canSwipe && "#fbf8f6" }}
           onClick={() => swipe("left")}
         >
-          Swipe left!
+          <img src="./img/skip.png" alt="skip this campaign" />
         </button>
         <button
-          style={{ backgroundColor: !canGoBack && "#c3c4d3" }}
-          onClick={() => goBack()}
+          className="donate"
+          style={{ backgroundColor: !canSwipe && "#fbf8f6" }}
+          onClick={() => donate()}
         >
-          Donate
+          <img src="./img/donate.png" alt="donate to this campaign" />
         </button>
         <button
-          style={{ backgroundColor: !canSwipe && "#c3c4d3" }}
+          style={{ backgroundColor: !canSwipe && "#fbf8f6" }}
           onClick={() => swipe("right")}
         >
-          Swipe right!
+          <img src="./img/heart.png" alt="like this campaign" />
         </button>
       </div>
       {lastDirection ? (
