@@ -57,8 +57,8 @@ function Advanced() {
     await childRefs[newIndex].current.restoreCard();
   };
 
-  const donate = (fundurl) => {
-    // window.open(fundurl);
+  const donate = () => {
+    window.open(db[currentIndex].fundurl);
     swipe("right");
   };
 
