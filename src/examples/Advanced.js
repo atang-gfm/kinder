@@ -58,8 +58,10 @@ function Advanced() {
   };
 
   const donate = () => {
-    window.open(db[currentIndex].fundurl);
     swipe("right");
+    setTimeout(() => {
+      window.open(db[currentIndex].fundurl);
+    }, 500);
   };
 
   return (
